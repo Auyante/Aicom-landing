@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICOM — Automatizamos tu presente. Impulsamos tu futuro.</title>
+    <meta name="description" content="AICOM es una agencia de tecnología, ingeniería de software y automatización inteligente enfocada en escalar PyMEs en Venezuela. Desarrollo web, agentes IA y soluciones a medida.">
+    <meta name="keywords" content="AICOM, automatización, inteligencia artificial, desarrollo web, Venezuela, PyMEs, ingeniería de software, SaaS">
+    <meta name="author" content="AICOM">
+    <meta property="og:title" content="AICOM — Automatizamos tu presente. Impulsamos tu futuro.">
+    <meta property="og:description" content="Ingeniería de software avanzada y automatización inteligente para corporaciones que no se conforman con el promedio.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/img/logos/logo-reduccion.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aicom-blue': '#003061',
+                        'aicom-accent': '#67AFCB',
+                        'aicom-dark': '#001a36',
+                        'aicom-light': '#e8f4f8',
+                        'aicom-gray': '#f0f4f8',
+                    },
+                    fontFamily: {
+                        'epic': ['"EPIC PRO"', 'sans-serif'],
+                        'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                        'gradient-shift': 'gradientShift 8s ease infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Fonts & Styles -->
+    <style>
+        @font-face {
+            font-family: 'EPIC PRO';
+            src: url('assets/fonts/Epic Pro.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'EPIC PRO';
+            src: url('assets/fonts/EpicPro-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Plus Jakarta Sans';
+            src: url('assets/fonts/Jakarta.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Plus Jakarta Sans';
+            src: url('assets/fonts/Jakarta-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Plus Jakarta Sans';
+            src: url('assets/fonts/Jakarta-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #001a36; }
+        ::-webkit-scrollbar-thumb { background: #67AFCB; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4d97b3; }
+
+        /* Hero diagonal clip */
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        @media (min-width: 768px) {
+            .hero-clip {
+                clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+            }
+        }
+
+        /* Section wave separators */
+        .wave-top {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+        .wave-bottom {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #67AFCB 0%, #ffffff 50%, #67AFCB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card hover glow */
+        .card-glow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-glow:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(103, 175, 203, 0.25);
+        }
+
+        /* Plan card highlight ring */
+        .plan-highlight {
+            position: relative;
+        }
+        .plan-highlight::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #67AFCB, #003061, #67AFCB);
+            z-index: -1;
+            animation: gradientShift 4s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        /* Floating shapes */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        /* Smooth scroll offset for fixed nav */
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        /* Mobile menu transition */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* Chat window animation */
+        .chat-window {
+            transform: scale(0.8) translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .chat-window.open {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Cookie banner slide */
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        /* Intersection observer reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Diagonal background pattern */
+        .bg-diagonal {
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 40px,
+                rgba(103, 175, 203, 0.03) 40px,
+                rgba(103, 175, 203, 0.03) 80px
+            );
+        }
+
+        /* Navbar glass */
+        .nav-glass {
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+
+        /* Shimmer effect on popular badge */
+        .shimmer-badge {
+            background: linear-gradient(90deg, #67AFCB 0%, #a0d8ef 50%, #67AFCB 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="font-jakarta bg-white text-gray-800 overflow-x-hidden">
+
+    <!-- ============================== -->
+    <!--          NAVBAR                -->
+    <!-- ============================== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass bg-aicom-dark/90 border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-2 md:py-3">
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0" id="nav-logo">
+                    <div class="h-10 md:h-12 w-36 md:w-44 overflow-hidden">
+                        <img src="assets/img/logos/logo-blanco.png" alt="AICOM Logo" class="w-full -mt-[50px] md:-mt-[62px]">
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servicios" class="nav-link text-white/80 hover:text-aicom-accent transition-colors duration-300 text-sm font-medium" data-es="Servicios" data-en="Services">Servicios</a>
+                    <a href="#planes" class="nav-link text-white/80 hover:text-aicom-accent transition-colors duration-300 text-sm font-medium" data-es="Planes" data-en="Plans">Planes</a>
+                    <a href="#adicionales" class="nav-link text-white/80 hover:text-aicom-accent transition-colors duration-300 text-sm font-medium" data-es="Adicionales" data-en="Add-ons">Adicionales</a>
+
+                    <!-- Language Switcher -->
+                    <button id="lang-toggle-desktop" onclick="toggleLanguage()" class="flex items-center space-x-1.5 text-white/60 hover:text-aicom-accent transition-colors duration-300 text-sm" title="Cambiar idioma">
+                        <i class="fa-solid fa-globe text-xs"></i>
+                        <span id="lang-label-desktop">ES / EN</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="https://wa.me/584220335137?text=Hola,%20AICOM.%20Me%20gustaría%20agendar%20una%20asesoría%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer"
+                       class="bg-gradient-to-r from-aicom-accent to-cyan-400 text-aicom-dark font-bold text-sm px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-aicom-accent/30 hover:scale-105 transition-all duration-300" id="nav-cta"
+                       data-es="Agendar Asesoría" data-en="Book a Consultation">
+                        Agendar Asesoría
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
+                <div class="flex flex-col space-y-3 pt-2 border-t border-white/10">
+                    <a href="#servicios" onclick="closeMobileMenu()" class="nav-link text-white/80 hover:text-aicom-accent transition-colors px-3 py-2 rounded-lg hover:bg-white/5 text-sm" data-es="Servicios" data-en="Services">Servicios</a>
+                    <a href="#planes" onclick="closeMobileMenu()" class="nav-link text-white/80 hover:text-aicom-accent transition-colors px-3 py-2 rounded-lg hover:bg-white/5 text-sm" data-es="Planes" data-en="Plans">Planes</a>
+                    <a href="#adicionales" onclick="closeMobileMenu()" class="nav-link text-white/80 hover:text-aicom-accent transition-colors px-3 py-2 rounded-lg hover:bg-white/5 text-sm" data-es="Adicionales" data-en="Add-ons">Adicionales</a>
+                    <button onclick="toggleLanguage()" class="flex items-center space-x-2 text-white/60 hover:text-aicom-accent transition-colors px-3 py-2 rounded-lg hover:bg-white/5 text-sm text-left">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="lang-label-mobile" data-es="Cambiar a Inglés" data-en="Switch to Spanish">Cambiar a Inglés</span>
+                    </button>
+                    <a href="https://wa.me/584220335137?text=Hola,%20AICOM.%20Me%20gustaría%20agendar%20una%20asesoría%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer"
+                       class="bg-gradient-to-r from-aicom-accent to-cyan-400 text-aicom-dark font-bold text-sm px-6 py-2.5 rounded-full text-center hover:shadow-lg transition-all duration-300"
+                       data-es="Agendar Asesoría" data-en="Book a Consultation">
+                        Agendar Asesoría
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ============================== -->
+    <!--          HERO SECTION          -->
+    <!-- ============================== -->
+    <section id="hero" class="hero-clip relative min-h-screen flex items-center bg-gradient-to-br from-aicom-dark via-aicom-blue to-aicom-dark overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="floating-shape w-96 h-96 bg-aicom-accent top-10 -left-20 animate-float" style="animation-delay: 0s;"></div>
+            <div class="floating-shape w-72 h-72 bg-aicom-accent bottom-20 right-10 animate-float" style="animation-delay: 2s;"></div>
+            <div class="floating-shape w-48 h-48 bg-cyan-300 top-1/3 right-1/4 animate-float" style="animation-delay: 4s;"></div>
+            <!-- Diagonal Lines -->
+            <div class="absolute inset-0 bg-diagonal"></div>
+            <!-- Grid pattern -->
+            <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #67AFCB 1px, transparent 1px); background-size: 40px 40px;"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-32 md:pt-36 md:pb-44">
+            <div class="max-w-4xl">
+
+                <!-- H1 -->
+                <h1 class="font-epic text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up">
+                    <span class="text-white" data-es="Automatizamos tu presente." data-en="We automate your present.">Automatizamos tu presente.</span><br>
+                    <span class="gradient-text" data-es="Impulsamos tu futuro." data-en="We drive your future.">Impulsamos tu futuro.</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-white/70 text-base sm:text-lg md:text-xl max-w-2xl mb-10 leading-relaxed animate-slide-up" style="animation-delay: 0.2s;"
+                   data-es="Ingeniería de software avanzada y automatización inteligente para corporaciones que no se conforman con el promedio."
+                   data-en="Advanced software engineering and intelligent automation for corporations that don't settle for average.">
+                    Ingeniería de software avanzada y automatización inteligente para corporaciones que no se conforman con el promedio.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                    <a href="#planes" class="group inline-flex items-center justify-center bg-gradient-to-r from-aicom-accent to-cyan-400 text-aicom-dark font-bold px-8 py-4 rounded-full text-base hover:shadow-2xl hover:shadow-aicom-accent/30 hover:scale-105 transition-all duration-300" id="hero-cta-plans">
+                        <span data-es="Ver Planes" data-en="View Plans">Ver Planes</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="https://wa.me/584220335137?text=Hola,%20AICOM.%20Quisiera%20hablar%20con%20un%20experto%20sobre%20soluciones%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer"
+                       class="group inline-flex items-center justify-center bg-transparent border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-full text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300" id="hero-cta-expert">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                        <span data-es="Hablar con un experto" data-en="Talk to an expert">Hablar con un experto</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="flex items-center gap-6 mt-12 animate-fade-in" style="animation-delay: 0.8s;">
+                    <div class="flex items-center gap-2 text-white/50 text-sm">
+                        <i class="fa-solid fa-shield-halved text-aicom-accent"></i>
+                        <span data-es="100% Seguro" data-en="100% Secure">100% Seguro</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/50 text-sm">
+                        <i class="fa-solid fa-bolt text-aicom-accent"></i>
+                        <span data-es="Soporte 24/7" data-en="24/7 Support">Soporte 24/7</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/50 text-sm">
+                        <i class="fa-solid fa-flag text-aicom-accent"></i>
+                        <span data-es="Hecho en Venezuela" data-en="Made in Venezuela">Hecho en Venezuela</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce-gentle">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+                <div class="w-1 h-3 bg-aicom-accent rounded-full animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================== -->
+    <!--       SERVICIOS SECTION        -->
+    <!-- ============================== -->
+    <section id="servicios" class="relative py-20 md:py-32 bg-white overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute top-0 right-0 w-80 h-80 bg-aicom-accent/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-aicom-blue/5 rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
+                <span class="inline-block text-aicom-accent font-semibold text-sm tracking-widest uppercase mb-4" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</span>
+                <h2 class="font-epic text-3xl sm:text-4xl md:text-5xl font-bold text-aicom-blue mb-6" data-es="Soluciones que transforman negocios" data-en="Solutions that transform businesses">Soluciones que transforman negocios</h2>
+                <p class="text-gray-500 text-base md:text-lg leading-relaxed" data-es="Combinamos ingeniería de software de vanguardia con automatización inteligente para llevar tu empresa al siguiente nivel." data-en="We combine cutting-edge software engineering with intelligent automation to take your business to the next level.">Combinamos ingeniería de software de vanguardia con automatización inteligente para llevar tu empresa al siguiente nivel.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1: Desarrollo Web & SaaS -->
+                <div class="card-glow group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:border-aicom-accent/30 reveal" style="transition-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-aicom-blue to-aicom-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-code text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-epic text-xl font-bold text-aicom-blue mb-3" data-es="Desarrollo Web & SaaS" data-en="Web Development & SaaS">Desarrollo Web & SaaS</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6" data-es="Plataformas a medida con backends robustos, bases de datos escalables y arquitectura moderna. Desde landing pages hasta aplicaciones SaaS complejas." data-en="Custom platforms with robust backends, scalable databases, and modern architecture. From landing pages to complex SaaS applications.">Plataformas a medida con backends robustos, bases de datos escalables y arquitectura moderna. Desde landing pages hasta aplicaciones SaaS complejas.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Sitios web profesionales" data-en="Professional websites">Sitios web profesionales</span></li>
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Paneles autoadministrables" data-en="Self-managed panels">Paneles autoadministrables</span></li>
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="APIs y microservicios" data-en="APIs and microservices">APIs y microservicios</span></li>
+                    </ul>
+                    <a href="https://wa.me/584220335137?text=Hola,%20quisiera%20saber%20más%20sobre%20el%20servicio%20de%20Desarrollo%20Web%20y%20SaaS" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-aicom-accent font-semibold text-sm hover:text-aicom-blue transition-colors group/btn">
+                        <span data-es="Saber más" data-en="Learn more">Saber más</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Agentes de IA -->
+                <div class="card-glow group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:border-aicom-accent/30 reveal" style="transition-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-aicom-accent to-cyan-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-robot text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-epic text-xl font-bold text-aicom-blue mb-3" data-es="Agentes de Inteligencia Artificial" data-en="Artificial Intelligence Agents">Agentes de Inteligencia Artificial</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6" data-es="Automatiza tu atención al cliente con agentes de IA entrenados especialmente para tu negocio. Respuestas inteligentes 24/7, en WhatsApp y más." data-en="Automate your customer service with AI agents specially trained for your business. Smart 24/7 responses on WhatsApp and more.">Automatiza tu atención al cliente con agentes de IA entrenados especialmente para tu negocio. Respuestas inteligentes 24/7, en WhatsApp y más.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Chatbots inteligentes" data-en="Intelligent chatbots">Chatbots inteligentes</span></li>
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Integración con WhatsApp" data-en="WhatsApp integration">Integración con WhatsApp</span></li>
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Entrenamiento personalizado" data-en="Custom training">Entrenamiento personalizado</span></li>
+                    </ul>
+                    <a href="https://wa.me/584220335137?text=Hola,%20quisiera%20saber%20más%20sobre%20el%20servicio%20de%20Agentes%20de%20Inteligencia%20Artificial" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-aicom-accent font-semibold text-sm hover:text-aicom-blue transition-colors group/btn">
+                        <span data-es="Saber más" data-en="Learn more">Saber más</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Ingeniería de Software & Telemetría -->
+                <div class="card-glow group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:border-aicom-accent/30 reveal md:col-span-2 lg:col-span-1" style="transition-delay: 0.3s;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-aicom-blue to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-microchip text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-epic text-xl font-bold text-aicom-blue mb-3" data-es="Ingeniería de Software & Telemetría" data-en="Software Engineering & Telemetry">Ingeniería de Software & Telemetría</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6" data-es="Soluciones complejas para la industria: monitoreo en tiempo real, sistemas embebidos, dashboards de telemetría y control de procesos industriales." data-en="Complex solutions for industry: real-time monitoring, embedded systems, telemetry dashboards, and industrial process control.">Soluciones complejas para la industria: monitoreo en tiempo real, sistemas embebidos, dashboards de telemetría y control de procesos industriales.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Monitoreo en tiempo real" data-en="Real-time monitoring">Monitoreo en tiempo real</span></li>
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Dashboards analíticos" data-en="Analytical dashboards">Dashboards analíticos</span></li>
+                        <li class="flex items-center text-sm text-gray-600"><i class="fa-solid fa-check text-aicom-accent mr-2 text-xs"></i><span data-es="Soluciones IoT industriales" data-en="Industrial IoT solutions">Soluciones IoT industriales</span></li>
+                    </ul>
+                    <a href="https://wa.me/584220335137?text=Hola,%20quisiera%20saber%20más%20sobre%20el%20servicio%20de%20Ingeniería%20de%20Software%20y%20Telemetría" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-aicom-accent font-semibold text-sm hover:text-aicom-blue transition-colors group/btn">
+                        <span data-es="Saber más" data-en="Learn more">Saber más</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================== -->
+    <!--     PLANES Y PRECIOS SECTION   -->
+    <!-- ============================== -->
+    <section id="planes" class="relative py-20 md:py-32 bg-aicom-dark overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-diagonal"></div>
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #67AFCB 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-aicom-accent/5 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
+                <span class="inline-block text-aicom-accent font-semibold text-sm tracking-widest uppercase mb-4" data-es="Planes y Precios" data-en="Plans & Pricing">Planes y Precios</span>
+                <h2 class="font-epic text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6" data-es="El plan perfecto para tu empresa" data-en="The perfect plan for your business">El plan perfecto para tu empresa</h2>
+                <p class="text-white/60 text-base md:text-lg leading-relaxed" data-es="Soluciones escalables diseñadas para el mercado venezolano. Desde tu primera presencia digital hasta infraestructura corporativa completa." data-en="Scalable solutions designed for the Venezuelan market. From your first digital presence to complete corporate infrastructure.">Soluciones escalables diseñadas para el mercado venezolano. Desde tu primera presencia digital hasta infraestructura corporativa completa.</p>
+            </div>
+
+            <!-- Plans Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+
+                <!-- Plan 1: Presencia Digital -->
+                <div class="card-glow bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-aicom-accent/40 flex flex-col reveal" style="transition-delay: 0.1s;">
+                    <div class="mb-6">
+                        <div class="w-12 h-12 bg-aicom-accent/10 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-globe text-aicom-accent text-lg"></i>
+                        </div>
+                        <h3 class="font-epic text-xl font-bold text-white mb-1" data-es="Presencia Digital" data-en="Digital Presence">Presencia Digital</h3>
+                        <p class="text-white/40 text-sm" data-es="Para empezar con fuerza" data-en="To start strong">Para empezar con fuerza</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-bold text-white">$150</span>
+                            <span class="text-white/40 text-sm">USD (Ref)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Web profesional responsive" data-en="Professional responsive website">Web profesional responsive</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Hosting incluido (1 año)" data-en="Hosting included (1 year)">Hosting incluido (1 año)</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Dominio personalizado" data-en="Custom domain">Dominio personalizado</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Integración WhatsApp" data-en="WhatsApp integration">Integración WhatsApp</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Formulario de contacto" data-en="Contact form">Formulario de contacto</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Certificado SSL" data-en="SSL certificate">Certificado SSL</span></li>
+                    </ul>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20contratar%20el%20Plan%20Presencia%20Digital%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer"
+                       class="w-full text-center bg-white/10 border border-white/20 text-white font-semibold py-3.5 rounded-full hover:bg-aicom-accent hover:border-aicom-accent hover:text-aicom-dark transition-all duration-300 text-sm"
+                       data-es="Contratar plan" data-en="Get this plan">
+                        Contratar plan
+                    </a>
+                </div>
+
+                <!-- Plan 2: Crecimiento -->
+                <div class="card-glow bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-aicom-accent/40 flex flex-col reveal" style="transition-delay: 0.2s;">
+                    <div class="mb-6">
+                        <div class="w-12 h-12 bg-aicom-accent/10 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-chart-line text-aicom-accent text-lg"></i>
+                        </div>
+                        <h3 class="font-epic text-xl font-bold text-white mb-1" data-es="Crecimiento" data-en="Growth">Crecimiento</h3>
+                        <p class="text-white/40 text-sm" data-es="Para escalar tu operación" data-en="To scale your operation">Para escalar tu operación</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-bold text-white">$300</span>
+                            <span class="text-white/40 text-sm">USD (Ref)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Todo lo del plan anterior" data-en="Everything from previous plan">Todo lo del plan anterior</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Web dinámica avanzada" data-en="Advanced dynamic website">Web dinámica avanzada</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Panel autoadministrable" data-en="Self-managed admin panel">Panel autoadministrable</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Base de datos integrada" data-en="Integrated database">Base de datos integrada</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Pasarelas de pago" data-en="Payment gateways">Pasarelas de pago</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="SEO optimizado" data-en="Optimized SEO">SEO optimizado</span></li>
+                    </ul>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20contratar%20el%20Plan%20Crecimiento%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer"
+                       class="w-full text-center bg-white/10 border border-white/20 text-white font-semibold py-3.5 rounded-full hover:bg-aicom-accent hover:border-aicom-accent hover:text-aicom-dark transition-all duration-300 text-sm"
+                       data-es="Contratar plan" data-en="Get this plan">
+                        Contratar plan
+                    </a>
+                </div>
+
+                <!-- Plan 3: Inteligencia (DESTACADO) -->
+                <div class="card-glow plan-highlight bg-gradient-to-b from-aicom-blue/80 to-aicom-dark/90 backdrop-blur-sm rounded-2xl p-8 border border-aicom-accent/30 flex flex-col relative reveal" style="transition-delay: 0.3s;">
+                    <!-- Popular Badge -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span class="shimmer-badge text-aicom-dark text-xs font-bold px-5 py-1.5 rounded-full shadow-lg" data-es="⚡ Más Popular" data-en="⚡ Most Popular">⚡ Más Popular</span>
+                    </div>
+                    <div class="mb-6 mt-2">
+                        <div class="w-12 h-12 bg-aicom-accent/20 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-brain text-aicom-accent text-lg"></i>
+                        </div>
+                        <h3 class="font-epic text-xl font-bold text-white mb-1" data-es="Inteligencia" data-en="Intelligence">Inteligencia</h3>
+                        <p class="text-aicom-accent/70 text-sm" data-es="El poder de la IA en tu negocio" data-en="The power of AI in your business">El poder de la IA en tu negocio</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-bold text-white">$500</span>
+                            <span class="text-white/40 text-sm">USD (Ref)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start text-sm text-white/80"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Todo lo de los planes anteriores" data-en="Everything from previous plans">Todo lo de los planes anteriores</span></li>
+                        <li class="flex items-start text-sm text-white/80"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Agente de IA entrenado 24/7" data-en="24/7 trained AI agent">Agente de IA entrenado 24/7</span></li>
+                        <li class="flex items-start text-sm text-white/80"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Chatbot personalizado" data-en="Custom chatbot">Chatbot personalizado</span></li>
+                        <li class="flex items-start text-sm text-white/80"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Automatización de procesos" data-en="Process automation">Automatización de procesos</span></li>
+                        <li class="flex items-start text-sm text-white/80"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Analítica avanzada" data-en="Advanced analytics">Analítica avanzada</span></li>
+                        <li class="flex items-start text-sm text-white/80"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Soporte prioritario" data-en="Priority support">Soporte prioritario</span></li>
+                    </ul>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20contratar%20el%20Plan%20Inteligencia%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer"
+                       class="w-full text-center bg-gradient-to-r from-aicom-accent to-cyan-400 text-aicom-dark font-bold py-3.5 rounded-full hover:shadow-xl hover:shadow-aicom-accent/30 hover:scale-[1.02] transition-all duration-300 text-sm"
+                       data-es="Contratar plan" data-en="Get this plan">
+                        Contratar plan
+                    </a>
+                </div>
+
+                <!-- Plan 4: Corporativo / A la Medida -->
+                <div class="card-glow bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-aicom-accent/40 flex flex-col reveal" style="transition-delay: 0.4s;">
+                    <div class="mb-6">
+                        <div class="w-12 h-12 bg-aicom-accent/10 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-building text-aicom-accent text-lg"></i>
+                        </div>
+                        <h3 class="font-epic text-xl font-bold text-white mb-1" data-es="Corporativo" data-en="Corporate">Corporativo</h3>
+                        <p class="text-white/40 text-sm" data-es="Solución 100% a la medida" data-en="100% custom solution">Solución 100% a la medida</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-white" data-es="Cotizar" data-en="Get Quote">Cotizar</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Arquitectura de microservicios" data-en="Microservices architecture">Arquitectura de microservicios</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Sistemas ERP personalizados" data-en="Custom ERP systems">Sistemas ERP personalizados</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Telemetría y control industrial" data-en="Telemetry and industrial control">Telemetría y control industrial</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Infraestructura cloud dedicada" data-en="Dedicated cloud infrastructure">Infraestructura cloud dedicada</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="SLA garantizado" data-en="Guaranteed SLA">SLA garantizado</span></li>
+                        <li class="flex items-start text-sm text-white/70"><i class="fa-solid fa-check text-aicom-accent mr-3 mt-0.5 text-xs"></i><span data-es="Equipo de desarrollo dedicado" data-en="Dedicated development team">Equipo de desarrollo dedicado</span></li>
+                    </ul>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20contratar%20el%20Plan%20Corporativo%20a%20la%20medida%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer"
+                       class="w-full text-center bg-white/10 border border-white/20 text-white font-semibold py-3.5 rounded-full hover:bg-aicom-accent hover:border-aicom-accent hover:text-aicom-dark transition-all duration-300 text-sm"
+                       data-es="Solicitar cotización" data-en="Request a quote">
+                        Solicitar cotización
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Compliance Notice (Venezuela) -->
+            <div class="mt-12 text-center reveal">
+                <div class="inline-flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-6 py-4 max-w-3xl">
+                    <i class="fa-solid fa-scale-balanced text-aicom-accent mt-0.5"></i>
+                    <p class="text-white/50 text-xs leading-relaxed text-left" data-es="Nota: Los montos expresados en divisas son estrictamente referenciales. Los pagos en bolívares (Bs) serán procesados según la tasa oficial vigente del Banco Central de Venezuela (BCV) del día de la transacción, cumpliendo con las normativas fiscales vigentes." data-en="Note: Amounts expressed in foreign currency are strictly referential. Payments in bolívares (Bs) will be processed at the official exchange rate of the Central Bank of Venezuela (BCV) on the transaction date, in compliance with current tax regulations.">
+                        <strong>Nota:</strong> Los montos expresados en divisas son estrictamente referenciales. Los pagos en bolívares (Bs) serán procesados según la tasa oficial vigente del Banco Central de Venezuela (BCV) del día de la transacción, cumpliendo con las normativas fiscales vigentes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================== -->
+    <!--     ADICIONALES SECTION        -->
+    <!-- ============================== -->
+    <section id="adicionales" class="relative py-20 md:py-32 bg-white overflow-hidden">
+        <!-- Background -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-aicom-gray/50 to-white pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-aicom-accent/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
+                <span class="inline-block text-aicom-accent font-semibold text-sm tracking-widest uppercase mb-4" data-es="Servicios Adicionales" data-en="Additional Services">Servicios Adicionales</span>
+                <h2 class="font-epic text-3xl sm:text-4xl md:text-5xl font-bold text-aicom-blue mb-6" data-es="Potencia tu plan con extras" data-en="Power up your plan with extras">Potencia tu plan con extras</h2>
+                <p class="text-gray-500 text-base md:text-lg leading-relaxed" data-es="Personaliza tu solución con servicios complementarios que se adaptan a las necesidades específicas de tu negocio." data-en="Customize your solution with complementary services that adapt to your business's specific needs.">Personaliza tu solución con servicios complementarios que se adaptan a las necesidades específicas de tu negocio.</p>
+            </div>
+
+            <!-- Add-ons Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Add-on 1 -->
+                <div class="card-glow group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:border-aicom-accent/30 flex flex-col reveal" style="transition-delay: 0.1s;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-11 h-11 bg-aicom-blue/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-aicom-accent/10 transition-colors">
+                            <i class="fa-solid fa-headset text-aicom-blue group-hover:text-aicom-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-epic text-base font-bold text-aicom-blue" data-es="Mantenimiento y Soporte Técnico Mensual" data-en="Monthly Maintenance & Technical Support">Mantenimiento y Soporte Técnico Mensual</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-grow" data-es="Actualizaciones, respaldo de datos, monitoreo del servidor y soporte técnico continuo para tu plataforma." data-en="Updates, data backups, server monitoring, and ongoing technical support for your platform.">Actualizaciones, respaldo de datos, monitoreo del servidor y soporte técnico continuo para tu plataforma.</p>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20añadir%20el%20servicio%20de%20Mantenimiento%20y%20Soporte%20Técnico%20Mensual%20a%20mi%20plan" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full text-sm font-semibold text-aicom-accent border border-aicom-accent/30 rounded-full py-2.5 hover:bg-aicom-accent hover:text-white transition-all duration-300"
+                       data-es="Añadir al plan" data-en="Add to plan">
+                        Añadir al plan
+                    </a>
+                </div>
+
+                <!-- Add-on 2 -->
+                <div class="card-glow group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:border-aicom-accent/30 flex flex-col reveal" style="transition-delay: 0.15s;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-11 h-11 bg-aicom-blue/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-aicom-accent/10 transition-colors">
+                            <i class="fa-solid fa-rotate text-aicom-blue group-hover:text-aicom-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-epic text-base font-bold text-aicom-blue" data-es="Renovación Anual de Hosting y Dominio" data-en="Annual Hosting & Domain Renewal">Renovación Anual de Hosting y Dominio</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-grow" data-es="Mantén tu sitio web activo y accesible con la renovación anual de tu hosting y nombre de dominio." data-en="Keep your website active and accessible with the annual renewal of your hosting and domain name.">Mantén tu sitio web activo y accesible con la renovación anual de tu hosting y nombre de dominio.</p>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20añadir%20el%20servicio%20de%20Renovación%20Anual%20de%20Hosting%20y%20Dominio%20a%20mi%20plan" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full text-sm font-semibold text-aicom-accent border border-aicom-accent/30 rounded-full py-2.5 hover:bg-aicom-accent hover:text-white transition-all duration-300"
+                       data-es="Añadir al plan" data-en="Add to plan">
+                        Añadir al plan
+                    </a>
+                </div>
+
+                <!-- Add-on 3 -->
+                <div class="card-glow group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:border-aicom-accent/30 flex flex-col reveal" style="transition-delay: 0.2s;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-11 h-11 bg-aicom-blue/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-aicom-accent/10 transition-colors">
+                            <i class="fa-solid fa-graduation-cap text-aicom-blue group-hover:text-aicom-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-epic text-base font-bold text-aicom-blue" data-es="Entrenamiento Extra para Agentes de IA" data-en="Extra Training for AI Agents">Entrenamiento Extra para Agentes de IA</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-grow" data-es="Amplía la base de conocimiento de tu agente de IA con datos adicionales, nuevos flujos y escenarios personalizados." data-en="Expand your AI agent's knowledge base with additional data, new flows, and custom scenarios.">Amplía la base de conocimiento de tu agente de IA con datos adicionales, nuevos flujos y escenarios personalizados.</p>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20añadir%20el%20servicio%20de%20Entrenamiento%20Extra%20para%20Agentes%20de%20IA%20a%20mi%20plan" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full text-sm font-semibold text-aicom-accent border border-aicom-accent/30 rounded-full py-2.5 hover:bg-aicom-accent hover:text-white transition-all duration-300"
+                       data-es="Añadir al plan" data-en="Add to plan">
+                        Añadir al plan
+                    </a>
+                </div>
+
+                <!-- Add-on 4 -->
+                <div class="card-glow group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:border-aicom-accent/30 flex flex-col reveal" style="transition-delay: 0.25s;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-11 h-11 bg-aicom-blue/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-aicom-accent/10 transition-colors">
+                            <i class="fa-solid fa-envelope text-aicom-blue group-hover:text-aicom-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-epic text-base font-bold text-aicom-blue" data-es="Cuentas de Correo Corporativo Adicionales" data-en="Additional Corporate Email Accounts">Cuentas de Correo Corporativo Adicionales</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-grow" data-es="Crea correos profesionales con tu dominio (nombre@tuempresa.com) para todo tu equipo de trabajo." data-en="Create professional emails with your domain (name@yourcompany.com) for your entire team.">Crea correos profesionales con tu dominio (nombre@tuempresa.com) para todo tu equipo de trabajo.</p>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20añadir%20el%20servicio%20de%20Cuentas%20de%20Correo%20Corporativo%20Adicionales%20a%20mi%20plan" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full text-sm font-semibold text-aicom-accent border border-aicom-accent/30 rounded-full py-2.5 hover:bg-aicom-accent hover:text-white transition-all duration-300"
+                       data-es="Añadir al plan" data-en="Add to plan">
+                        Añadir al plan
+                    </a>
+                </div>
+
+                <!-- Add-on 5 -->
+                <div class="card-glow group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:border-aicom-accent/30 flex flex-col sm:col-span-2 lg:col-span-1 reveal" style="transition-delay: 0.3s;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-11 h-11 bg-aicom-blue/5 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-aicom-accent/10 transition-colors">
+                            <i class="fa-solid fa-cloud text-aicom-blue group-hover:text-aicom-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-epic text-base font-bold text-aicom-blue" data-es="Despliegue y Config. de Servidores Cloud" data-en="Cloud Server Deployment & Setup">Despliegue y Config. de Servidores Cloud</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-grow" data-es="Configuramos y desplegamos tu infraestructura en la nube (AWS, GCP, Azure) con las mejores prácticas de seguridad." data-en="We configure and deploy your cloud infrastructure (AWS, GCP, Azure) with security best practices.">Configuramos y desplegamos tu infraestructura en la nube (AWS, GCP, Azure) con las mejores prácticas de seguridad.</p>
+                    <a href="https://wa.me/584220335137?text=Hola,%20me%20interesa%20añadir%20el%20servicio%20de%20Despliegue%20y%20Configuración%20de%20Servidores%20Cloud%20a%20mi%20plan" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center w-full text-sm font-semibold text-aicom-accent border border-aicom-accent/30 rounded-full py-2.5 hover:bg-aicom-accent hover:text-white transition-all duration-300"
+                       data-es="Añadir al plan" data-en="Add to plan">
+                        Añadir al plan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================== -->
+    <!--           FOOTER               -->
+    <!-- ============================== -->
+    <footer class="bg-aicom-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+
+                <!-- Column 1: Brand -->
+                <div>
+                    <div class="h-12 md:h-14 w-40 md:w-48 overflow-hidden mb-5">
+                        <img src="assets/img/logos/logo-blanco.png" alt="AICOM Logo" class="w-full -mt-[58px] md:-mt-[70px]">
+                    </div>
+                    <p class="text-white/50 text-sm leading-relaxed max-w-xs" data-es="Agencia de tecnología, ingeniería de software y automatización inteligente enfocada en escalar PyMEs en Venezuela." data-en="Technology agency, software engineering, and intelligent automation focused on scaling SMEs in Venezuela.">Agencia de tecnología, ingeniería de software y automatización inteligente enfocada en escalar PyMEs en Venezuela.</p>
+                    <!-- Social Icons -->
+                    <div class="flex items-center gap-4 mt-6">
+                        <a href="https://www.instagram.com/aicomve" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white/50 hover:bg-aicom-accent/20 hover:text-aicom-accent transition-all duration-300" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/584220335137?text=Hola,%20AICOM.%20Vengo%20de%20su%20sitio%20web%20y%20necesito%20asesoría" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white/50 hover:bg-green-500/20 hover:text-green-400 transition-all duration-300" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Contact -->
+                <div>
+                    <h4 class="font-epic text-white font-bold text-base mb-6" data-es="Contacto" data-en="Contact">Contacto</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-white/50 text-sm">
+                            <i class="fa-solid fa-location-dot text-aicom-accent mt-0.5"></i>
+                            <span data-es="Maturín, estado Monagas, Venezuela" data-en="Maturín, Monagas state, Venezuela">Maturín, estado Monagas, Venezuela</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white/50 text-sm">
+                            <i class="fa-solid fa-phone text-aicom-accent mt-0.5"></i>
+                            <a href="tel:+584220335137" class="hover:text-aicom-accent transition-colors">+58 422 033 5137</a>
+                        </li>
+                        <li class="flex items-start gap-3 text-white/50 text-sm">
+                            <i class="fa-brands fa-instagram text-aicom-accent mt-0.5"></i>
+                            <a href="https://www.instagram.com/aicomve" target="_blank" rel="noopener noreferrer" class="hover:text-aicom-accent transition-colors">@aicomve</a>
+                        </li>
+                        <li class="flex items-start gap-3 text-white/50 text-sm">
+                            <i class="fa-brands fa-whatsapp text-aicom-accent mt-0.5"></i>
+                            <a href="https://wa.me/584220335137?text=Hola,%20AICOM.%20Vengo%20de%20su%20sitio%20web%20y%20necesito%20asesoría" target="_blank" rel="noopener noreferrer" class="hover:text-aicom-accent transition-colors">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Legal -->
+                <div>
+                    <h4 class="font-epic text-white font-bold text-base mb-6" data-es="Legal" data-en="Legal">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="terms.html" class="text-white/50 text-sm hover:text-aicom-accent transition-colors" data-es="Términos y Condiciones" data-en="Terms & Conditions">Términos y Condiciones</a></li>
+                        <li><a href="privacy.html" class="text-white/50 text-sm hover:text-aicom-accent transition-colors" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</a></li>
+                        <li><a href="cookies.html" class="text-white/50 text-sm hover:text-aicom-accent transition-colors" data-es="Política de Cookies" data-en="Cookie Policy">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                    <p class="text-white/30 text-xs" data-es="AICOM C.A. | RIF: J-XXXXXXXX-X" data-en="AICOM C.A. | Tax ID: J-XXXXXXXX-X">AICOM C.A. | RIF: J-XXXXXXXX-X</p>
+                    <p class="text-white/30 text-xs">© 2026 AICOM. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============================== -->
+    <!--    FLOATING WHATSAPP BUTTON    -->
+    <!-- ============================== -->
+    <a href="https://wa.me/584220335137?text=Hola,%20AICOM.%20Vengo%20de%20su%20sitio%20web%20y%20necesito%20asesoría" target="_blank" rel="noopener noreferrer"
+       id="whatsapp-float" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/30 hover:scale-110 hover:shadow-green-500/50 transition-all duration-300 animate-bounce-gentle" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+
+    <!-- ============================== -->
+    <!--      AI CHATBOT WIDGET         -->
+    <!-- ============================== -->
+    <div id="chatbot-container" class="fixed bottom-6 right-24 z-40">
+        <!-- Chat Bubble Toggle -->
+        <button id="chatbot-toggle" onclick="toggleChatbot()" class="w-14 h-14 bg-gradient-to-br from-aicom-blue to-aicom-accent rounded-full flex items-center justify-center shadow-2xl shadow-aicom-blue/30 hover:scale-110 transition-all duration-300 relative" aria-label="Chatbot IA">
+            <i class="fa-solid fa-robot text-white text-xl" id="chatbot-icon-open"></i>
+            <i class="fa-solid fa-xmark text-white text-xl hidden" id="chatbot-icon-close"></i>
+            <!-- Notification Pulse -->
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-aicom-accent rounded-full animate-ping" id="chatbot-ping"></span>
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-aicom-accent rounded-full" id="chatbot-dot"></span>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chatbot-window" class="chat-window fixed sm:absolute bottom-24 sm:bottom-20 right-4 sm:right-0 left-4 sm:left-auto sm:w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-aicom-blue to-aicom-accent p-4 flex items-center gap-3">
+                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-robot text-white"></i>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm">AICOM IA</p>
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-white/80 text-xs" data-es="En línea" data-en="Online">En línea</span>
+                    </div>
+                </div>
+                <button onclick="toggleChatbot()" class="ml-auto text-white/80 hover:text-white transition-colors p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="p-4 h-64 overflow-y-auto bg-gray-50" id="chat-messages">
+                <!-- Bot initial message -->
+                <div class="flex items-end gap-2 mb-4">
+                    <div class="w-8 h-8 bg-aicom-blue rounded-full flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-robot text-white text-xs"></i>
+                    </div>
+                    <div class="bg-white rounded-2xl rounded-bl-md px-4 py-3 shadow-sm max-w-[80%]">
+                        <p class="text-sm text-gray-700" data-es="¡Hola! 👋 Soy la IA de AICOM. ¿En qué puedo ayudarte a automatizar tu empresa hoy?" data-en="Hello! 👋 I'm AICOM's AI. How can I help you automate your business today?">¡Hola! 👋 Soy la IA de AICOM. ¿En qué puedo ayudarte a automatizar tu empresa hoy?</p>
+                        <span class="text-xs text-gray-400 mt-1 block">AICOM IA</span>
+                    </div>
+                </div>
+
+                <!-- Quick Replies -->
+                <div class="flex flex-wrap gap-2 ml-10" id="quick-replies">
+                    <button onclick="sendQuickReply(this)" class="text-xs bg-aicom-accent/10 text-aicom-blue border border-aicom-accent/20 rounded-full px-3 py-1.5 hover:bg-aicom-accent/20 transition-colors" data-es="Quiero una página web" data-en="I want a website" data-reply-es="Me interesa crear una página web para mi empresa" data-reply-en="I'm interested in creating a website for my business">Quiero una página web</button>
+                    <button onclick="sendQuickReply(this)" class="text-xs bg-aicom-accent/10 text-aicom-blue border border-aicom-accent/20 rounded-full px-3 py-1.5 hover:bg-aicom-accent/20 transition-colors" data-es="¿Qué es un agente IA?" data-en="What is an AI agent?" data-reply-es="Quiero saber más sobre los agentes de inteligencia artificial" data-reply-en="I want to know more about artificial intelligence agents">¿Qué es un agente IA?</button>
+                    <button onclick="sendQuickReply(this)" class="text-xs bg-aicom-accent/10 text-aicom-blue border border-aicom-accent/20 rounded-full px-3 py-1.5 hover:bg-aicom-accent/20 transition-colors" data-es="Ver planes y precios" data-en="See plans and pricing" data-reply-es="Quiero conocer los planes y precios disponibles" data-reply-en="I want to know the available plans and pricing">Ver planes y precios</button>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-3 border-t border-gray-100 bg-white">
+                <div class="flex items-center gap-2">
+                    <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." class="flex-grow bg-gray-50 rounded-full px-4 py-2.5 text-sm outline-none border border-gray-200 focus:border-aicom-accent transition-colors" onkeydown="if(event.key==='Enter')sendChatMessage()"
+                           data-placeholder-es="Escribe tu mensaje..." data-placeholder-en="Type your message...">
+                    <button onclick="sendChatMessage()" class="w-10 h-10 bg-gradient-to-br from-aicom-blue to-aicom-accent rounded-full flex items-center justify-center text-white shrink-0 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                </div>
+                <p class="text-[10px] text-gray-400 text-center mt-2" data-es="Powered by AICOM · Respuestas simuladas" data-en="Powered by AICOM · Simulated responses">Powered by AICOM · Respuestas simuladas</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================== -->
+    <!--       COOKIE BANNER            -->
+    <!-- ============================== -->
+    <div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6">
+        <div class="max-w-5xl mx-auto bg-aicom-dark/95 backdrop-blur-xl rounded-2xl border border-white/10 p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6 shadow-2xl">
+            <div class="flex items-start gap-3 flex-grow">
+                <i class="fa-solid fa-cookie-bite text-aicom-accent text-xl shrink-0 mt-0.5"></i>
+                <p class="text-white/70 text-sm leading-relaxed" data-es="Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al continuar navegando, aceptas el uso de cookies conforme a nuestra Política de Privacidad." data-en="We use cookies to improve your experience on our website. By continuing to browse, you accept the use of cookies in accordance with our Privacy Policy.">Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al continuar navegando, aceptas el uso de cookies conforme a nuestra Política de Privacidad.</p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button onclick="acceptCookies()" class="bg-gradient-to-r from-aicom-accent to-cyan-400 text-aicom-dark font-bold text-sm px-6 py-2.5 rounded-full hover:scale-105 transition-transform" data-es="Aceptar todas" data-en="Accept all">Aceptar todas</button>
+                <button onclick="configureCookies()" class="bg-white/10 border border-white/20 text-white text-sm px-5 py-2.5 rounded-full hover:bg-white/20 transition-colors" data-es="Configurar" data-en="Configure">Configurar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================== -->
+    <!--         JAVASCRIPT             -->
+    <!-- ============================== -->
+    <script>
+        // ===== LANGUAGE SYSTEM =====
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.documentElement.lang = currentLang;
+            applyLanguage();
+        }
+
+        function applyLanguage() {
+            // Update all elements with data-es and data-en attributes
+            document.querySelectorAll('[data-es][data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`);
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        // Handle placeholder separately
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Handle input placeholders
+            document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
+                el.placeholder = el.getAttribute(`data-placeholder-${currentLang}`);
+            });
+
+            // Update lang label
+            const desktopLabel = document.getElementById('lang-label-desktop');
+            if (desktopLabel) desktopLabel.textContent = currentLang === 'es' ? 'ES / EN' : 'EN / ES';
+
+            const mobileLabel = document.getElementById('lang-label-mobile');
+            if (mobileLabel) mobileLabel.textContent = currentLang === 'es' ? 'Cambiar a Inglés' : 'Switch to Spanish';
+        }
+
+
+        // ===== MOBILE MENU =====
+        let mobileMenuOpen = false;
+
+        function toggleMobileMenu() {
+            mobileMenuOpen = !mobileMenuOpen;
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            if (mobileMenuOpen) {
+                menu.classList.add('open');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.remove('open');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function closeMobileMenu() {
+            if (mobileMenuOpen) {
+                mobileMenuOpen = false;
+                document.getElementById('mobile-menu').classList.remove('open');
+                const icon = document.getElementById('menu-icon');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const scrollY = window.scrollY;
+
+            if (scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'shadow-black/10');
+            } else {
+                navbar.classList.remove('shadow-lg', 'shadow-black/10');
+            }
+
+            lastScroll = scrollY;
+        });
+
+
+        // ===== CHATBOT =====
+        let chatbotOpen = false;
+
+        function toggleChatbot() {
+            chatbotOpen = !chatbotOpen;
+            const window_ = document.getElementById('chatbot-window');
+            const iconOpen = document.getElementById('chatbot-icon-open');
+            const iconClose = document.getElementById('chatbot-icon-close');
+            const ping = document.getElementById('chatbot-ping');
+            const dot = document.getElementById('chatbot-dot');
+
+            if (chatbotOpen) {
+                window_.classList.add('open');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                if (ping) ping.style.display = 'none';
+                if (dot) dot.style.display = 'none';
+            } else {
+                window_.classList.remove('open');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        }
+
+        // Bot responses (simulated)
+        const botResponses = {
+            es: {
+                web: '¡Excelente elección! 🚀 Nuestros planes de desarrollo web van desde $150 USD. Te incluimos diseño profesional, hosting, dominio y hasta integración con WhatsApp. ¿Te gustaría que un experto te contacte para una asesoría personalizada?',
+                ia: '¡Los agentes de IA son el futuro! 🤖 Imagina tener un asistente virtual 24/7 que atiende a tus clientes, responde preguntas y agenda citas automáticamente. Nuestro Plan Inteligencia ($500 USD Ref.) incluye un agente IA entrenado especialmente para tu negocio.',
+                planes: '¡Claro! 💡 Tenemos 4 planes:\n\n🔹 Presencia Digital: $150 USD\n🔹 Crecimiento: $300 USD\n🔹 Inteligencia: $500 USD (⭐ Más popular)\n🔹 Corporativo: A medida\n\nTodos los precios son referenciales en USD. ¿Cuál te interesa?',
+                default: '¡Gracias por tu mensaje! 😊 Para brindarte la mejor atención, te recomiendo hablar directamente con uno de nuestros expertos por WhatsApp. ¡Te responderán al instante!'
+            },
+            en: {
+                web: 'Excellent choice! 🚀 Our web development plans start from $150 USD. We include professional design, hosting, domain, and even WhatsApp integration. Would you like an expert to contact you for a personalized consultation?',
+                ia: 'AI agents are the future! 🤖 Imagine having a 24/7 virtual assistant that serves your customers, answers questions, and schedules appointments automatically. Our Intelligence Plan ($500 USD Ref.) includes an AI agent specially trained for your business.',
+                planes: 'Of course! 💡 We have 4 plans:\n\n🔹 Digital Presence: $150 USD\n🔹 Growth: $300 USD\n🔹 Intelligence: $500 USD (⭐ Most popular)\n🔹 Corporate: Custom\n\nAll prices are referential in USD. Which one interests you?',
+                default: 'Thank you for your message! 😊 For the best service, I recommend talking directly with one of our experts on WhatsApp. They\'ll respond instantly!'
+            }
+        };
+
+        function sendQuickReply(btn) {
+            const replyKey = currentLang === 'es' ? 'data-reply-es' : 'data-reply-en';
+            const message = btn.getAttribute(replyKey);
+            addUserMessage(message);
+
+            // Hide quick replies
+            document.getElementById('quick-replies').style.display = 'none';
+
+            // Determine response type
+            const text = message.toLowerCase();
+            let responseType = 'default';
+            if (text.includes('web') || text.includes('página') || text.includes('website')) responseType = 'web';
+            else if (text.includes('ia') || text.includes('agente') || text.includes('inteligencia') || text.includes('ai')) responseType = 'ia';
+            else if (text.includes('plan') || text.includes('precio') || text.includes('pricing')) responseType = 'planes';
+
+            setTimeout(() => {
+                addBotMessage(botResponses[currentLang][responseType]);
+            }, 1000);
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addUserMessage(message);
+            input.value = '';
+
+            // Hide quick replies
+            const qr = document.getElementById('quick-replies');
+            if (qr) qr.style.display = 'none';
+
+            // Determine response
+            const text = message.toLowerCase();
+            let responseType = 'default';
+            if (text.includes('web') || text.includes('página') || text.includes('sitio') || text.includes('website')) responseType = 'web';
+            else if (text.includes('ia') || text.includes('inteligencia') || text.includes('bot') || text.includes('agente') || text.includes('ai')) responseType = 'ia';
+            else if (text.includes('plan') || text.includes('precio') || text.includes('cost') || text.includes('price')) responseType = 'planes';
+
+            // Typing indicator
+            addTypingIndicator();
+
+            setTimeout(() => {
+                removeTypingIndicator();
+                addBotMessage(botResponses[currentLang][responseType]);
+            }, 1500);
+        }
+
+        function addUserMessage(text) {
+            const container = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = 'flex justify-end mb-4';
+            div.innerHTML = `
+                <div class="bg-gradient-to-br from-aicom-blue to-aicom-accent rounded-2xl rounded-br-md px-4 py-3 max-w-[80%]">
+                    <p class="text-sm text-white">${escapeHtml(text)}</p>
+                </div>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function addBotMessage(text) {
+            const container = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = 'flex items-end gap-2 mb-4';
+            div.innerHTML = `
+                <div class="w-8 h-8 bg-aicom-blue rounded-full flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-robot text-white text-xs"></i>
+                </div>
+                <div class="bg-white rounded-2xl rounded-bl-md px-4 py-3 shadow-sm max-w-[80%]">
+                    <p class="text-sm text-gray-700 whitespace-pre-line">${escapeHtml(text)}</p>
+                    <span class="text-xs text-gray-400 mt-1 block">AICOM IA</span>
+                </div>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const container = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.id = 'typing-indicator';
+            div.className = 'flex items-end gap-2 mb-4';
+            div.innerHTML = `
+                <div class="w-8 h-8 bg-aicom-blue rounded-full flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-robot text-white text-xs"></i>
+                </div>
+                <div class="bg-white rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
+                    <div class="flex gap-1">
+                        <span class="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style="animation-delay: 0ms;"></span>
+                        <span class="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style="animation-delay: 150ms;"></span>
+                        <span class="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style="animation-delay: 300ms;"></span>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) indicator.remove();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+
+        // ===== COOKIE BANNER =====
+        function initCookieBanner() {
+            const accepted = localStorage.getItem('aicom-cookies-accepted');
+            if (!accepted) {
+                setTimeout(() => {
+                    document.getElementById('cookie-banner').classList.add('show');
+                }, 2000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('aicom-cookies-accepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        function configureCookies() {
+            // For now, same as accept — in production, open a modal
+            acceptCookies();
+        }
+
+
+        // ===== INTERSECTION OBSERVER (Reveal on scroll) =====
+        function initRevealObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+
+        // ===== INIT =====
+        document.addEventListener('DOMContentLoaded', () => {
+            initRevealObserver();
+            initCookieBanner();
+        });
+    </script>
+
+</body>
+</html>
